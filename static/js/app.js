@@ -14,7 +14,7 @@ var tbody = d3.select("tbody");
 // get the date filter. Use get.event.target
 
 //Select the filter button
-var button = d3.select("#button");
+var button = d3.select("button");
 
 //Select the form
 var form = d3.select("form");
@@ -27,6 +27,8 @@ form.on("submit",runEnter);
 function runEnter() {
 
   // Prevent the page from refreshing
+  
+  
   d3.event.preventDefault();
 
   // Select the input element and get the raw HTML node
@@ -37,6 +39,9 @@ function runEnter() {
 
   // Print the value to the console
   console.log(inputValue);
+
+  //Clearing entries from inputValue
+  d3.selectAll("tr").remove()
 
   // Printing entries into table
   tableData.forEach((entry) => {
